@@ -7,12 +7,6 @@ SHELL = /bin/sh
 
 all: 
 	clear
-	cd build && make -j8
-	cd build && ./main
+	cd build && cmake .. && make -j8
+	cd build && ./main $(test_function)
 .PHONY: all 
-
-git:
-	git add .
-	git commit -m $(commit_message)
-	git push
-.PHONE: git

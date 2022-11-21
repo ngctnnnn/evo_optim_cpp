@@ -134,6 +134,11 @@ namespace optim_fn {
             
             if (verbose == 1) {
                 std::cout << "#Generation: " << generation_count + 1 << "\t  ";
+                std::cout << "Best individual: [";
+                for (auto x : best_individual) {
+                    std::cout << x << ",";
+                }
+                std::cout << "]\t";
                 std::cout << "Fitness: " << fitness[best_idx] << "\t  ";
                 std::cout << "#Eval: " << num_eval << std::endl;
             }
