@@ -10,3 +10,8 @@ all:
 	cd build && make -j8
 	cd build && ./main
 .PHONY: all 
+
+git:
+	git add .
+	git commit -m $(commit_message)
+	git push
