@@ -13,24 +13,25 @@ int popsize = 32;
 int max_evals = static_cast<int>(1e4);
 int verbose = 1;
 
-double (*test_fn)(std::vector<double>) = &Sphere;
-
 int main (int argc, char **argv) {
     std::string test_function = argv[1];
+    std::vector<SavedInformation> all_best_results;
+
     if (test_function == "Sphere") {
-        double (*test_fn)(std::vector<double>) = &Sphere;
         bounds = {-32.678, 32.678};
+        all_best_results = optim_fn::DifferentialEvolution(&Sphere, mutation, dimension, bounds, F_scale, cross_prob, popsize, max_evals, verbose);
     }
     else if (test_function == "Rastrigin") {
-        double (*test_fn)(std::vector<double>) = &Rastrigin;
         bounds = {-5.12, 5.12};
+        all_best_results = optim_fn::DifferentialEvolution(&Rastrigin, mutation, dimension, bounds, F_scale, cross_prob, popsize, max_evals, verbose);
     } 
+    else if (test_function == "Rosenbrock") {
+        bounds = {-5, 10};
+        all_best_results = optim_fn::DifferentialEvolution(&Rosenbrock, mutation, dimension, bounds, F_scale, cross_prob, popsize, max_evals, verbose);
+    }
     else {
         std::cout << "[Error] This test function is not yet implemented!\n";
         assert(1==2);
     }
-
-    std::vector<SavedInformation> all_best_results = optim_fn::DifferentialEvolution(test_fn, mutation, dimension, bounds, F_scale, cross_prob, popsize, max_evals, verbose);
-    
     return 0;
 }

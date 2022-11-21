@@ -2,6 +2,11 @@
 #include "constant.h"
 #include <cmath>
 #include <vector>
+#include <iostream>
+
+double sqr(double x) {
+    return x * x;
+}
 
 double Sphere(std::vector<double> ind) {
     /*
@@ -30,4 +35,16 @@ double Rastrigin(std::vector<double> ind) {
         obj_val += (value*value) - (10 * std::cos(2*constant::PI*value));
     }
     return obj_val;
+}
+double Rosenbrock(std::vector<double> ind) {
+    /*
+    Rosenbrock function
+    f(x) = \sum_{i = 1}^{d - 1}\left[100(x_{i+1}-x_i^2) + (x_i - 1)^2\right]
+    s.t., $x_i \in [-5;10]$
+    */
+    double sum = 0;
+    for (int i = 0; i < ind.size() - 1; ++i) {
+        sum += 100 * sqr(ind[i + 1] - ind[i]*ind[i]) + sqr(ind[i] - 1);
+    }
+    return sum;
 }

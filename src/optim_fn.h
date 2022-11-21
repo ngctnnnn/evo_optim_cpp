@@ -1,8 +1,6 @@
 #ifndef optim_fn_HPP
 #define optim_fn_HPP
 
-#include <vector>
-#include <iostream>
 #include "NumCpp.hpp"
 
 struct SavedInformation {
