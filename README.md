@@ -11,15 +11,21 @@ to optimize:
 
 - Sphere function
 
-$$ f(x) = \sum_{i = 1}^d x_i^2 $$
-s.t.,
-    - x \in \left[-32.678, 32.678\right]^d
+```math
+f(x) = \sum_{i = 1}^d x_i^2
+```
+
+s.t., $x \in \left[-32.678, 32.678\right]^d$
 
 - Rastrigin function
-$$ f(x) = A + \sum_{i = 1}^d[x_i^2 - A \cos(2 \pi x_i)] $$
+
+```math
+f(x) = A + \sum_{i = 1}^d[x_i^2 - A \cos(2 \pi x_i)]
+```
+
 s.t.,
-    - A = 10
-    - x \in \left[-5.12, 5.12]\right]^d
+- $A = 10$
+- $x \in \left[-5.12, 5.12]\right]^d$
 
 --- 
 # Run this code
