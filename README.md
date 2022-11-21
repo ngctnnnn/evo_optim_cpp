@@ -42,6 +42,8 @@ s.t., $x_i \in [-5;10]$
 
 ### Run this code
 ```bash
-make test_fn=test_function_name
+make algorithm=evolution_algorithm_name test_fn=test_function_name
 ```
-s.t., `test_function_name` is the name of test function you would like to test
+s.t., 
+- `evolution_algorithm_name` is the name of evolution algorithm you would like to use
+- `test_function_name` is the name of test function you would like to test

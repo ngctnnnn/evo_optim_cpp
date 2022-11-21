@@ -6,7 +6,8 @@ set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS} ${OPENCV_CXX_FLAGS} -DFFMPEG=OFF -DWITH_OPENCL=1 -pthread -Wall -I/Users/ngctnnnn/Documents/Research/optim_cpp/include/NumCpp/include/ -I/Users/ngctnnnn/Documents/Research/optim_cpp/include/boost")
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-FILE(GLOB_RECURSE sourcefiles "src/main.cpp")
+# FILE(GLOB_RECURSE sourcefiles "src/main.cpp")
+FILE(GLOB_RECURSE sourcefiles "src/test.cpp")
 FILE(GLOB_RECURSE headerfiles "src/*.h")
 
 set(CMAKE_CXX_STANDARD 17)

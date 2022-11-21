@@ -8,5 +8,5 @@ SHELL = /bin/sh
 all: 
 	clear
 	cd build && cmake .. && make -j8
-	cd build && ./main $(test_function)
+	cd build && ./main $(algorithm) $(test_function)
 .PHONY: all 
