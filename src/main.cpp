@@ -1,20 +1,22 @@
-#define OPTIM_ENABLE_EIGEN_WRAPPERS
-#include "optim.hpp"
-#include "test_functions/Ackley.h"
-#include <iostream>
+#include "test_functions/test_fns.h"
+#include "optim_fn.h"
+#include <stdlib.h>
+#include <functional>
+#include <time.h>
 
-int main (int argc, char** argv) {
-    Eigen::VectorXd x = 2.0 * Eigen::VectorXd::Ones(2); // initial values: (2,2)
-        
-    bool success = optim::de(x, Ackley, nullptr);
-        
-    if (success) {
-        std::cout << "de: Ackley test completed successfully." << std::endl;
-    } else {
-        std::cout << "de: Ackley test completed unsuccessfully." << std::endl;
-    }
-        
-    std::cout << "de: solution to Ackley test:\n" << x << std::endl;
-        
+bool mutation = 1;
+std::pair<double, double> bounds = {-32.678, 32.678};
+int dimension = 2;
+double F_scale = 0.8;
+double cross_prob = 0.7;
+int popsize = 32;
+int max_evals = static_cast<int>(1e4);
+int verbose = 1;
+
+int main (int argc, char **argv) {
+    // auto test_function = Sphere;
+    // std::function<double(std::vector<double>)> test_fn = Sphere;
+    std::vector<SavedInformation> all_best_results = optim_fn::DifferentialEvolution(&Sphere, mutation, dimension, bounds, F_scale, cross_prob, popsize, max_evals, verbose);
+
     return 0;
 }

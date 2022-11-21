@@ -3,7 +3,7 @@ project(optim-cpp)
 add_definitions(-D_GLIBCXX_USE_CXX11_ABI=0)
 
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS} ${OPENCV_CXX_FLAGS} -DFFMPEG=OFF -DWITH_OPENCL=1 -pthread -Wall -I/Users/ngctnnnn/Documents/Research/optim_cpp/include/optim/header_only_version -I/Users/ngctnnnn/Documents/Research/optim_cpp/include/eigen")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS} ${OPENCV_CXX_FLAGS} -DFFMPEG=OFF -DWITH_OPENCL=1 -pthread -Wall -I/Users/ngctnnnn/Documents/Research/optim_cpp/include/NumCpp/include/ -I/Users/ngctnnnn/Documents/Research/optim_cpp/include/boost")
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 FILE(GLOB_RECURSE sourcefiles "src/main.cpp")

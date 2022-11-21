@@ -1,3 +1,0 @@
-[submodule "include/BaseMatrixOps"]
-	path = include/BaseMatrixOps
-	url = https://github.com/kthohr/BaseMatrixOps.git
