@@ -8,6 +8,5 @@ Currently built for:
 - Differential Evolution
 to optimize:
 - Sphere function
-$$
-f(x) = \sum_{i = 1}^d x_i^2
-$$
+
+$$ f(x) = \sum_{i = 1}^d x_i^2 $$
